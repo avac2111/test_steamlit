@@ -7,6 +7,7 @@ st.write("# 보험료 예측")
 st.write("> 보험료 예측해주는 프로그램입니다.")
 st.image('https://i.imgur.com/NYfcnki_d.webp?maxwidth=520&shape=thumb&fidelity=high')
 
+
 # 첫번째 행
 r1_col1, r1_col2, r1_col3 = st.columns(3)
 
@@ -32,9 +33,11 @@ is_southwest = region_option[0] == region
 is_southeast = region_option[1] == region
 is_northwest = region_option[2] == region
 
+
+
 # 예측 버튼
 predict_button = st.button("예측")
-predict_button = st.button("예측 취소")
+cancel = st.button("예측 취소")
 
 st.write("---")
 
@@ -45,4 +48,5 @@ if predict_button:
     pred = model.predict(np.array([[age, bmi, children, smoker * 1,
         is_male * 1, is_northwest * 1, is_southeast * 1, is_southwest * 1]]))
 
-    st.metric("예측 보험료", pred[0])
+    if not cancel:
+        st.metric("예측 보험료", pred[0])
