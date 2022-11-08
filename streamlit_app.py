@@ -34,6 +34,7 @@ is_northwest = region_option[2] == region
 
 # 예측 버튼
 predict_button = st.button("예측")
+predict_button = st.button("예측 취소")
 
 st.write("---")
 
