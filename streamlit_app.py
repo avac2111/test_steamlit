@@ -5,6 +5,7 @@ import numpy as np
 # 헤드라인
 st.write("# 보험료 예측")
 st.write("> 보험료 예측해주는 프로그램입니다.")
+st.image('https://i.imgur.com/NYfcnki_d.webp?maxwidth=520&shape=thumb&fidelity=high')
 
 # 첫번째 행
 r1_col1, r1_col2, r1_col3 = st.columns(3)
